@@ -4,6 +4,7 @@
   "dependencies": {
     "express": "2.5.x",
     "cheerio": "0.12.x",
+    "commander":"1.2.x",
     "restler":"2.0.x"
   },
   "engines": {
