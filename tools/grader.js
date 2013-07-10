@@ -31,8 +31,8 @@ var CHECKSFILE_DEFAULT = "checks.json";
 var assertFileExists = function(infile) {
     var instr = infile.toString();
     if(!fs.existsSync(instr)) {
-        console.log("%s does not exist. Exiting.", instr);
-        process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
+        console.log("[E] Error: %s does not exist. Exiting.", instr);
+        process.exit(1);
     }
     return instr;
 };
@@ -41,7 +41,7 @@ var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
-// checks html
+// checks html (file or url)
 var checkHtml = function(html, checks) {
     $ = cheerio.load(html);
     var out = {};
@@ -50,7 +50,7 @@ var checkHtml = function(html, checks) {
         out[checks[ii]] = present;
     }
     return out;
-}
+};
 
 // loads html from a file and checks it
 var checkHtmlFile = function(htmlfile, checks) {
@@ -65,7 +65,7 @@ var getURL = function(url, callback) {
     resp.on('complete', function(result) {
         if (result instanceof Error) {
             // callback(result);
-            sys.puts('Error: ' + result.message);
+            console.log('[E] Error: ' + result.message);
             this.retry(5000); // try again after 5 sec
             return;
         }
@@ -89,14 +89,14 @@ if(require.main == module) {
     // this function loads checks & checks html
     var checkHTML = function(err, html) {
         if (err | html instanceof Error) {
-            console.log('Error getting html: ' + err);
+            console.log('[E] Error getting html: ' + err);
             process.exit(1);
         }
         var checks = loadChecks(program.checks);
         var checkJson = checkHtml(html, checks);
         var outJson = JSON.stringify(checkJson, null, 4);
         console.log(outJson);
-    }
+    };
 
     if (program.url) {
         getURL(program.url, checkHTML);
