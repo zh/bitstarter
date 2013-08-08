@@ -96,7 +96,7 @@
       }
       /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
       div.addthis_toolbox {
-        width:274px;
+        width:244px;
         margin: 0 auto;
       }
     </style>
@@ -192,9 +192,12 @@
             </div>
           </div>
           <div class="span6 offset3 order">
-            <!-- Standard Bootstrap button. -->
+            <!-- Bitcoin button. -->
             <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
-            <button class="btn btn-success btn-large">Preorder</button>
+            <a class="coinbase-button" data-code="069873d242b2f7025cdf4e5ccf14cd56" data-button-style="custom_large" 
+                                       data-custom="WORDHOST1" data-button-text="Preorder with Bitcoin"
+               href="https://coinbase.com/checkouts/069873d242b2f7025cdf4e5ccf14cd56">Preorder with Bitcoin</a>
+            <script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
           </div>
           <div class="span8 offset2 social">
             <!-- Social buttons are not included in default Bootstrap. -->
