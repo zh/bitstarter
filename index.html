@@ -57,25 +57,42 @@
         line-height: 24px;
       }
 
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
-        padding: 10px 0px 10px 0px;
+      /* Video pitch and Action */
+      .pitch {
+        padding: 2.5% 0%;
       }
-      .video, .thermometer, .order, .social {
-        border: 1px dotted;
+      .order {
+        padding: 2% 0%;
+      }
+      .actions {
+        background-color: #343434;
+        padding: 3% 0%;
+      }
+      .video, .thermometer, .order, .social, .statistics {
         text-align: center;
       }
-      .video {
-        /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
-        height: 124px;
-        line-height: 124px;
+      .statistics h3, .statistics p {
+        color: white;
       }
-      .thermometer, .order, .social {
-        /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
-        height: 40px;
-        line-height: 40px;
+
+      /* Marketing Copy and Footer */
+      .copy {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        text-align: justify;
       }
-      div.row {
-        border: 1px solid;
+      .asset {
+        padding: 2.5% 0%;
+      }
+      .footer {
+        color: #cccccc;
+        text-align: center;
+      }
+      .footer p {
+        font-size: 11px;
+      }
+      .footer a {
+        color: #ccccff;
       }
     </style>
   </head>
@@ -92,7 +109,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">KidStarter</a>
+          <a class="brand" href="#">BitStarter</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -104,26 +121,23 @@
       </div>
     </div>
 
+    <!-- We use row-fluid inside containers to achieve a resizable layout. -->
+    <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+    <!-- http://stackoverflow.com/a/12270322 -->
     <div class="container">
-      <div class="row navigation">
-        <div class="span2 logo">
-          Logo
-        </div>
-        <div class="span6 blank">
-          Blank
-        </div>
-        <div class="span4 about">
-          About
+      <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
+      <!-- www.google.com/fonts/specimen/Ubuntu -->
+      <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+      <div class="row-fluid heading">
+        <div class="span12">
+          <h1>Product</h1>
         </div>
       </div>
-      <div class="row heading">
+      <div class="row-fluid subheading">
         <div class="span12">
-          <h1>Bitstarter Title</h1>
-        </div>
-      </div> 
-     <div class="row subheading">
-        <div class="span12">
-          <p class="lead">This is my first bitstarter project.</p>
+          <!-- Special typography from Bootstrap for lead paragraph. -->
+          <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
+          <p class="lead">One sentence description</p>
         </div>
       </div>
       <div class="row pitch">
